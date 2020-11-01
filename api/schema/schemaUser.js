@@ -21,8 +21,8 @@ const userSchema = mongoose.Schema(
 );
 
 userSchema.methods = {
-  authenticate: function (password) {
-    return bcrypt.compare(password, this.password,);
+  authenticate: async function (password) {
+    return await bcrypt.compare(password, this.password,);
   },
   getToken: function () {
     return jwt.encode(this, config.secret);

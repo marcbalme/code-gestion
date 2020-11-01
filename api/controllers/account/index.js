@@ -12,8 +12,7 @@ async function signup(req, res) {
   // Création d'un objet user, dans lequel on hash le mot de passe
   const user = {
     username,
-    password: password,
-    // bcrypt.hash(password, 10)
+    password: await bcrypt.hash(password, 10),
   };
   // On check en base si l'utilisateur existe déjà
   
