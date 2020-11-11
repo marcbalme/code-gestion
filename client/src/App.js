@@ -1,40 +1,40 @@
-import React, { useState } from "react";
-import "./App.css";
-import Axios from "axios";
+import React, { useState } from 'react';
+import './App.css';
+import Axios from 'axios';
 
 function App() {
-  const [registerUsername, setRegisterUsername] = useState("");
-  const [registerPassword, setRegisterPassword] = useState("");
-  const [loginUsername, setLoginUsername] = useState("");
-  const [loginPassword, setLoginPassword] = useState("");
+  const [registerUsername, setRegisterUsername] = useState('');
+  const [registerPassword, setRegisterPassword] = useState('');
+  const [loginUsername, setLoginUsername] = useState('');
+  const [loginPassword, setLoginPassword] = useState('');
   const [data, setData] = useState(null);
   const register = () => {
     Axios({
-      method: "POST",
+      method: 'POST',
       data: {
         username: registerUsername,
         password: registerPassword,
       },
       withCredentials: true,
-      url: "http://localhost:8800/signup",
+      url: 'http://localhost:8800/signup',
     }).then((res) => console.log(res));
   };
   const login = () => {
     Axios({
-      method: "POST",
+      method: 'POST',
       data: {
         username: loginUsername,
         password: loginPassword,
       },
       withCredentials: true,
-      url: "http://localhost:8800/login",
+      url: 'http://localhost:8800/login',
     }).then((res) => console.log(res));
   };
   const getUser = () => {
     Axios({
-      method: "GET",
+      method: 'GET',
       withCredentials: true,
-      url: "http://localhost:8800/user",
+      url: 'http://localhost:8800/user',
     }).then((res) => {
       setData(res.data);
       console.log(res);
@@ -54,7 +54,6 @@ function App() {
         />
         <button onClick={register}>Submit</button>
       </div>
-
       <div>
         <h1>Login</h1>
         <input
