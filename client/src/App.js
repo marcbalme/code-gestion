@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import Axios from 'axios';
+import GlobalStyles from './style';
 
 function App() {
   const [registerUsername, setRegisterUsername] = useState('');
@@ -42,6 +43,7 @@ function App() {
   };
   return (
     <div className="App">
+      <GlobalStyles />
       <div>
         <h1>Register</h1>
         <input
